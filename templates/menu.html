@@ -8,6 +8,18 @@
         </div>
 
         <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <div>
             {% for c in courseType %}
                 <h3>{{c}}</h3>
                 {% for i in items %}
