@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask
+from flask import Flask, render_template
 
 #Fake Restaurants
 restaurant = {'name': 'The CRUDdy Crab', 'id': '1'}
@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/restaurants/')
 def showRestaurants():
-    return "This page will show all my restaurants"
+    return render_template('restaurants.html', restaurants=restaurants)
 
 @app.route('/restaurants/new/')
 def newRestaurant():
