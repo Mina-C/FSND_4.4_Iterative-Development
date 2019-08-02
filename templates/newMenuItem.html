@@ -2,34 +2,34 @@
     <body>
         <h1>New Menu Item</h1>
         
-        <form action="#" method="POST">
-        <div>
-            Name:
-        </div>
-        <input type="text" name='name'>
+        <form action="{{url_for('newMenuItem', restaurant_id=restaurant.id)}}" method="POST">
+            <div>
+                Name:
+            </div>
+            <input type="text" name='name' required>
 
-        <div>
-            Description:
-        </div>
-        <input type="text" name='description'>
+            <div>
+                Description:
+            </div>
+            <input type="text" name='description' required>
 
-        <div>
-            Price:
-        </div>
-        <input type="text" name='price'>
+            <div>
+                Price:
+            </div>
+            <input type="text" name='price' required>
 
-        <div>
-            Course:
-        </div>
-        <div>
-            <input type="radio">Appetizer</input></br>
-            <input type="radio">Entree</input></br>
-            <input type="radio">Dessert</input></br>
-            <input type="radio">Beverage</input>
-        </div>
-        
-        <input type="submit" value="Create">
-        <a href="#">Cancel</a>
+            <div>
+                Course:
+            </div>
+            <div>
+                <input type="radio" name='course' value="Appetizer" required>Appetizer</input></br>
+                <input type="radio" name='course' value="Entree" required>Entree</input></br>
+                <input type="radio" name='course' value="Dessert" required>Dessert</input></br>
+                <input type="radio" name='course' value="Beverage" required>Beverage</input>
+            </div>
+            
+            <input type="submit" value="Create">
+            <a href="{{url_for('showMenu',restaurant_id=restaurant.id)}}">Cancel</a>
         </form>
     </body>
 </html>
