@@ -19,7 +19,7 @@ def showRestaurants():
 
 @app.route('/restaurants/new/')
 def newRestaurant():
-    return "This page will be for making a new restaurant"
+    return render_template('newRestaurants.html')
 
 @app.route('/restaurants/<int:restaurant_id>/edit/')
 def editRestaurant(restaurant_id):
