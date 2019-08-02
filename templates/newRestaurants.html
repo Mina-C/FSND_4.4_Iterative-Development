@@ -1,15 +1,13 @@
 <html>
     <body>
         <h1>New Restaurant</h1>
-        
-        <div>
-            Name:
-        </div>
-
-        <form action="#" method="POST">
-            <input type="text" name='restaurant'>
+        <form action="{{url_for('newRestaurant')}}" method="POST">
+            <div>
+                Name:
+            </div>
+            <input type="text" name='name'>
             <input type="submit" value="Create">
-            <a href="#">Cancel</a>
+            <a href="{{url_for('showRestaurants')}}">Cancel</a>
         </form>
     </body>
 </html>
