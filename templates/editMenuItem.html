@@ -1,4 +1,7 @@
 <html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css')}}">
+    </head>
     <body>
         <h1>Edit Menu Item</h1>
         
@@ -18,15 +21,31 @@
             </div>
             <input type="text" name='price' placeholder="{{item.price}}">
 
-<!--            <div>
+            <div>
                 Course:
             </div>
             <div>
+                {% if item.course == 'Appetizer' %}
+                <input type="radio" name='course' value="Appetizer" checked>Appetizer</input></br>
+                {% else %}
                 <input type="radio" name='course' value="Appetizer">Appetizer</input></br>
+                {% endif %}
+                {% if item.course == 'Entree' %}
+                <input type="radio" name='course' value="Entree" checked>Entree</input></br>
+                {% else %}
                 <input type="radio" name='course' value="Entree">Entree</input></br>
+                {% endif %}
+                {% if item.course == 'Dessert' %}
+                <input type="radio" name='course' value="Dessert" checked>Dessert</input></br>
+                {% else %}
                 <input type="radio" name='course' value="Dessert">Dessert</input></br>
+                {% endif %}
+                {% if item.course == 'Beverage' %}
+                <input type="radio" name='course' value="Beverage" checked>Beverage</input>
+                {% else %}
                 <input type="radio" name='course' value="Beverage">Beverage</input>
-            </div> -->
+                {% endif %}
+            </div>
             </br>
             <input type="submit" value="Edit">
             <a href="{{url_for('showMenu',restaurant_id=restaurant.id)}}">Cancel</a>
