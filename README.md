@@ -7,7 +7,13 @@ You need Python(ver.3), Linux-based virtual machine environment(Vagrant and Virt
     To download Vagrant : https://www.vagrantup.com/downloads.html</br>
     To download VirtualBox : https://www.virtualbox.org/wiki/Downloads
   2. To install SQL Alchemy, please visit this website : https://www.sqlalchemy.org/
-  3. ...
+  3. Please make a shared directory on vagrant environment. (Ref. https://www.howtogeek.com/189974/how-to-share-your-computers-files-with-a-virtual-machine/)
+  4. Please download from the github. Addtionally, following files are needed.</br>
+    "lotsofmenus.py" : https://github.com/lobrown/Full-Stack-Foundations/blob/master/Lesson_1/lotsofmenus.py
+  5. Under the VM environment, locate the directory which has all the files and folders we downloaded. Use the command "python lotsofmenus.py", then "restaurantmenu.db" file will be created.
+  6. Please run the code with "python finalproject.py". And to stop the server, please enter "exit" or press Ctrl+C. Command for turning off the VM is "vagrant halt".
+  7. Open the browser and type the address: http://localhost:5000/restaurants.
+
 
 ## Program's Design
 This app will show you the list of restaurant from data. Users can check menu items for each restaurants. Plus, users can create, edit and delete either restaurants and menu items. Each of the function will be assigned by URLs. You can also extract JSON format of the Restaurant and MenuItem data.
